@@ -1,0 +1,20 @@
+.add-comment-input {
+	background: #fff;
+	border-radius: 2rem;
+}
+
+.add-comment-input::placeholder {
+	font-size: 1rem;
+}
+
+.add-comment-container {
+	display: flex;
+	align-items: center;
+	background: none;
+	margin-bottom: 1rem;
+}
+
+.add-comment-container svg {
+	cursor: pointer;
+	background: none;
+}

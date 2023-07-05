@@ -1,0 +1,17 @@
+.see-more-btn {
+	color: #A1ACB3;
+	margin-top: .5rem;
+	background: none;
+	border: none;
+	border-bottom: 1px solid #A1ACB3;
+	width: fit-content;
+	display: flex;
+	flex-direction: row-reverse;
+	cursor: pointer;
+}
+
+.see-more-btn:hover {
+	color: #1C6CFC;
+	border-bottom: 1px solid #1C84FC;
+	font-weight: 500;
+}

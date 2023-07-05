@@ -1,0 +1,21 @@
+.form-container {
+	min-height: 93vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+}
+
+.btn-login {
+	padding: .8rem 2rem;
+	border-radius: 1rem;
+	font-size: 1rem;
+	font-weight: 600;
+	cursor: pointer;
+	max-width: 10rem;
+}

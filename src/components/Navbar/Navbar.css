@@ -1,0 +1,27 @@
+.navbar-container {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	border-bottom: 2px solid #1C84FC;
+	padding: .6rem 3rem;
+}
+
+.btn-navbar {
+	padding: .8rem 2rem;
+	border-radius: 1rem;
+	font-size: 1rem;
+	font-weight: 600;
+	cursor: pointer;
+}
+
+.navbar-container img {
+	width: 6rem;
+}
+
+.navbar-content {
+	display: flex;
+}
+
+li {
+	list-style: none;
+}

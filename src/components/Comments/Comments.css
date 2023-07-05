@@ -1,0 +1,19 @@
+.comments-content {
+	padding: .5rem;
+	background: #C5E3E8;
+	border-radius: .5rem;
+	margin-bottom: 1rem;
+}
+
+.comments-content p {
+	background: none;
+	margin-bottom: .5rem;
+}
+
+.comments-content svg {
+	background: none;
+}
+
+.comment-text {
+	padding: 0 0 0 1rem;
+}
