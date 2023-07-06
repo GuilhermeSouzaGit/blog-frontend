@@ -45,6 +45,20 @@ export const AllPosts = () => {
 		});
 	};
 
+	const updatePostComments = (postId, newComments) => {
+		setPosts((prevPosts) => {
+			return prevPosts.map((post) => {
+				if (post._id === postId) {
+					return {
+						...post,
+						comments: newComments,
+					};
+				}
+				return post;
+			});
+		});
+	};
+
 	return (
 		<div>
 			<Navbar btnText="Sair" />
@@ -77,10 +91,22 @@ export const AllPosts = () => {
 									</div>
 									<div className="comment-section">
 										<div className="add-comment">
-											<AddComment postId={post._id} />
+											<AddComment
+												postId={post._id}
+												updatePostComments={
+													updatePostComments
+												}
+											/>
 										</div>
 										<div className="comments">
-											<Comments posts={posts} />
+											{post.comments.map((comment) => {
+												return (
+													<Comments
+														comment={comment}
+														key={comment._id}
+													/>
+												);
+											})}
 										</div>
 									</div>
 								</div>

@@ -7,7 +7,6 @@
 
 .post-content {
 	display: flex;
-	flex-direction: column;
 	flex-wrap: wrap;
 	width: 25vw;
 	margin-top: 4rem;
@@ -34,9 +33,7 @@
 }
 
 .like-comment-section {
-	display: flex;
-	flex-direction: column;
-	align-items: flex-start;
+	width: 100%;
 	margin-top: 1rem;
 	background: #ffffff;
 }
@@ -44,7 +41,7 @@
 .likes {
 	display: flex;
 	flex-direction: column;
-	align-items: center;
+	align-items: flex-start;
 	background: #fff;
 }
 
@@ -53,6 +50,7 @@
 }
 
 .comments {
+	width: 100%;
 	background: #fff;
 }
 

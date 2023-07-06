@@ -5,7 +5,13 @@
 	margin-bottom: 1rem;
 }
 
+.comment-title {
+	font-weight: 700;
+}
+
 .comments-content p {
+	display: flex;
+	align-items: center;
 	background: none;
 	margin-bottom: .5rem;
 }
@@ -15,5 +21,6 @@
 }
 
 .comment-text {
-	padding: 0 0 0 1rem;
+	letter-spacing: 1px;
+	padding-left: 1.6rem;
 }

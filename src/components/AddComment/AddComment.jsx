@@ -1,15 +1,16 @@
 /* eslint-disable react/prop-types */
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import "./AddComment.css";
 import { AiOutlineSend } from "react-icons/ai";
 import { useAuth } from "../../context/AuthContext";
 
-export const AddComment = ({ postId }) => {
+export const AddComment = ({ postId, updatePostComments }) => {
 	const [text, setText] = useState("");
 	const { token } = useAuth();
+	const inputRef = useRef(null);
 
-	const handleChange = (e) => {
-		setText(e.target.value);
+	const handleChange = () => {
+		setText(inputRef.current.innerText);
 	};
 
 	const handleComment = (e) => {
@@ -28,21 +29,22 @@ export const AddComment = ({ postId }) => {
 			.then((res) => {
 				if (res.status === 200) return res.json();
 			})
-			.then((data) => {
-				console.log(data);
-				// updatePostLikes(postId, data.likes, data.likesCount);
+			.then(({ comments }) => {
+				updatePostComments(postId, comments);
+				setText("");
+				inputRef.current.innerText = "";
 			})
 			.catch((err) => console.log(err));
 	};
 
 	return (
 		<div className="add-comment-container">
-			<input
-				type="text"
-				className="add-comment-input"
-				placeholder="Adicionar comentário"
-				value={text}
-				onChange={handleChange}
+			<div
+				ref={inputRef}
+				className={`add-comment-input ${text ? "has-content" : ""}`}
+				data-placeholder="Adicionar comentário"
+				onInput={handleChange}
+				contentEditable
 			/>
 			<AiOutlineSend size={30} onClick={handleComment} />
 		</div>
