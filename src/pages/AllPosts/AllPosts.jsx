@@ -75,11 +75,15 @@ export const AllPosts = () => {
 								>
 									{post.content}
 								</p>
-								<SeeMore
-									postId={post._id}
-									posts={posts}
-									setPosts={setPosts}
-								/>
+								{post.content.length > 278 ? (
+									<SeeMore
+										postId={post._id}
+										posts={posts}
+										setPosts={setPosts}
+									/>
+								) : (
+									""
+								)}
 								<div className="like-comment-section">
 									<div className="likes">
 										<Like
