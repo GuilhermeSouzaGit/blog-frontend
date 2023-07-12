@@ -5,6 +5,7 @@
 	border-radius: 1rem;
 	resize: vertical;
 	outline: none;
+	letter-spacing: 1px;
 }
 
 .add-comment-input[contenteditable="true"]::after {
