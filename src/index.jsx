@@ -8,6 +8,8 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Login } from "./pages/Login/Login";
 import { AllPosts } from "./pages/AllPosts/AllPosts";
 import { AuthProvider } from "./context/AuthContext";
+import { Profile } from "./pages/Profile/Profile";
+import { Post } from "./pages/Post/Post";
 
 const router = createBrowserRouter([
 	{
@@ -21,6 +23,14 @@ const router = createBrowserRouter([
 	{
 		path: "/posts/",
 		element: <AllPosts />,
+	},
+	{
+		path: "/user/:id",
+		element: <Profile />,
+	},
+	{
+		path: "/post/:id",
+		element: <Post />,
 	},
 ]);
 
