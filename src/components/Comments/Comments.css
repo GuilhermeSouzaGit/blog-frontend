@@ -9,6 +9,18 @@
 	font-weight: 700;
 }
 
+.comments-content a {
+	display: inline-block;
+	color: inherit;
+	text-decoration: none;
+	background: none;
+}
+
+.comments-content a:hover {
+	color: rgb(0, 0, 238);
+	text-decoration: underline;
+}
+
 .comments-content p {
 	display: flex;
 	align-items: center;
