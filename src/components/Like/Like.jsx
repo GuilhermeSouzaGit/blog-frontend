@@ -35,10 +35,17 @@ export const Like = ({ postId, postLikes, updatePostLikes, post }) => {
 			<div className="likes-content">
 				<p>{post.likesCount}</p>
 				<button onClick={handleLike} className="like-btn">
-					{postLikes.includes(usersId) ? (
-						<AiFillHeart size={20} />
+					{postLikes ? (
+						postLikes.includes(usersId) ? (
+							<AiFillHeart size={20} color="var(--icon-color)" />
+						) : (
+							<AiOutlineHeart
+								size={20}
+								color="var(--icon-color)"
+							/>
+						)
 					) : (
-						<AiOutlineHeart size={20} />
+						""
 					)}
 				</button>
 			</div>
