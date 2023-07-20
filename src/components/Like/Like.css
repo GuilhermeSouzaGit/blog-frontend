@@ -1,5 +1,5 @@
 .like-btn {
-	background: #ffffff;
+	background: var(--bg-elements);
 	border: none;
 	cursor: pointer;
 }
@@ -10,7 +10,7 @@
 }
 
 .like-btn svg {
-	background: #ffffff;
+	background: var(--bg-elements);
 }
 
 .likes-content {
@@ -18,4 +18,5 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	color: var(--font-color);
 }
