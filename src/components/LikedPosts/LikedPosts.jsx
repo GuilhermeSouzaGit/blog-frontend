@@ -1,8 +1,10 @@
+/* eslint-disable react/prop-types */
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
+import "./LikedPosts.css";
 
-export const LikedPosts = () => {
+export const LikedPosts = ({ user }) => {
 	const { token } = useAuth();
 	const [likedPosts, setLikedPosts] = useState([]);
 
@@ -28,14 +30,19 @@ export const LikedPosts = () => {
 
 	return (
 		<div className="liked-posts-container">
-			<h1>Atividades</h1>
-			{likedPosts.map((likedPost) => {
-				return (
-					<Link key={likedPost._id} to={`/post/${likedPost._id}`}>
-						<h2>{likedPost.title}</h2>
-					</Link>
-				);
-			})}
+			<h2>Atividades</h2>
+			<div className="liked-posts">
+				{likedPosts.map((likedPost) => {
+					return (
+						<div key={likedPost._id} className="post-card">
+							<Link to={`/post/${likedPost._id}`}>
+								<span>{user} Curtiu isto</span>
+								<h2>{likedPost.title}</h2>
+							</Link>
+						</div>
+					);
+				})}
+			</div>
 		</div>
 	);
 };
