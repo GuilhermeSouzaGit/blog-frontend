@@ -1,24 +1,86 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
+:root {
+	--background: #E6F5FF;
+	--background-btn: #1C84FC;
+	--btn-color: #fff;
+	--btn-hover-color: #1C84FC;
+	--border-comment-input: #0000004d;
+	--placeholder-comment-input: #aaaaaa;
+	--comments-content-bg: #C5E3E8;
+	--comment-profile-hover: #0000ee;
+	--bg-elements: #fff;
+	--user-activities-color: #00000099;
+	--border-top-post-card: #00000014;
+	--navbar-border-bottom-color: #1C84FC;
+	--see-more-color: #A1ACB3;
+	--see-more-color-hover: #1C6CFC;
+	--font-color: #000000;
+	--posted-by-hover: #4672E0;
+	--font-color-comments:
+}
+
+[data-theme='dark'] {
+	--background: #1d1d1d;
+	--bg-elements: #000000;
+	--comments-content-bg: #3d3d3d;
+	--font-color: #ffffff;
+	--icon-color: #ffffff;
+	--border-comment-input: #ffffff4d;
+	--user-activities-color: #ffffff99;
+	--border-top-post-card: #ffffff14;
+	--font-color-comments: #E6F5FF;
+	--navbar-border-bottom-color: #ffffff;
+	--background-btn: #fff;
+	--btn-color: #000;
+	--btn-hover-color: #fff;
+}
+
 * {
 	margin: 0;
 	padding: 0;
 	font-family: 'Montserrat', sans-serif;
 	letter-spacing: 2px;
-	background: #E6F5FF;
+	background: var(--background);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: var(--font-color);
+}
+
+.access-denied-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 4rem;
+}
+
+.access-denied-container h1 {
+	font-size: 3rem;
+	color: red;
+}
+
+.access-denied-container p {
+	font-size: 2rem;
+	color: red;
 }
 
 .btn {
 	border: none;
 	outline: none;
-	background: #1C84FC;
-	border: 1px solid #1C84FC;
-	color: white;
+	background: var(--background-btn);
+	border: 1px solid var(--background-btn);
+	color: var(--btn-color);
 }
 
 .btn:hover {
 	transition: all .2s;
-	background: white;
-	border: 1px solid #1C84FC;
-	color: #1C84FC;
+	background: var(--background);
+	border: 1px solid var(--background-btn);
+	color: var(--btn-hover-color);
 }
