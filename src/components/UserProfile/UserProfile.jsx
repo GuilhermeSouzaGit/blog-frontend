@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
 import { LikedPosts } from "../LikedPosts/LikedPosts";
+import "./UserProfile.css";
+import { AccessDenied } from "../AccessDenied/AccessDenied";
 
 export const UserProfile = () => {
 	const [user, setUser] = useState();
@@ -21,21 +23,25 @@ export const UserProfile = () => {
 		)
 			.then((res) => res.json())
 			.then(({ user }) => {
-				setUser(user);
+				setUser(user.name);
 			})
 			.catch((e) => console.log(e));
 	}, [params.id]);
 
 	return (
 		<>
-			<div className="profile">
-				{user ? (
-					<h1>Bem vindo ao perfil do usuário {user.name}</h1>
-				) : (
-					<p>Carregando</p>
-				)}
-			</div>
-			<LikedPosts />
+			{token ? (
+				<div className="profile">
+					{user ? (
+						<h1>Bem vindo ao perfil do usuário {user}</h1>
+					) : (
+						<p>Carregando</p>
+					)}
+					<LikedPosts user={user} />
+				</div>
+			) : (
+				<AccessDenied />
+			)}
 		</>
 	);
 };
