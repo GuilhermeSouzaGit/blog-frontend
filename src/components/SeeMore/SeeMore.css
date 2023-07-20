@@ -1,9 +1,9 @@
 .see-more-btn {
-	color: #A1ACB3;
+	color: var(--see-more-color);
 	margin-top: .5rem;
 	background: none;
 	border: none;
-	border-bottom: 1px solid #A1ACB3;
+	border-bottom: 1px solid var(--see-more-color);
 	width: fit-content;
 	display: flex;
 	flex-direction: row-reverse;
@@ -11,7 +11,19 @@
 }
 
 .see-more-btn:hover {
-	color: #1C6CFC;
-	border-bottom: 1px solid #1C84FC;
+	color: var(--see-more-color-hover);
+	border-bottom: 1px solid var(--see-more-color-hover);
 	font-weight: 500;
+}
+
+@media (max-width: 700px) {
+	.see-more-btn {
+		font-size: .7rem;
+	}
+}
+
+@media (max-width: 500px) {
+	.see-more-btn {
+		font-size: .6rem;
+	}
 }
