@@ -39,7 +39,7 @@ export const Login = () => {
 
 	return (
 		<>
-			<Navbar linkRoute="/login" btnText="Registrar-se" />
+			<Navbar linkRoute="/register" btnText="Registrar-se" />
 			<div className="form-container">
 				<form action="" onSubmit={handleSubmit}>
 					<Input
@@ -58,6 +58,7 @@ export const Login = () => {
 						value={formData.password}
 						onChange={handleChange}
 					/>
+
 					<button type="submit" className="btn btn-login">
 						Entrar
 					</button>
