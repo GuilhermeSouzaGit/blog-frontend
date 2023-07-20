@@ -46,7 +46,11 @@ export const AddComment = ({ postId, updatePostComments }) => {
 				onInput={handleChange}
 				contentEditable
 			/>
-			<AiOutlineSend size={30} onClick={handleComment} />
+			<AiOutlineSend
+				size={30}
+				onClick={handleComment}
+				color="var(--icon-color)"
+			/>
 		</div>
 	);
 };
