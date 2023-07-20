@@ -1,6 +1,6 @@
 .comments-content {
 	padding: .5rem;
-	background: #C5E3E8;
+	background: var(--comments-content-bg);
 	border-radius: .5rem;
 	margin-bottom: 1rem;
 }
@@ -9,15 +9,19 @@
 	font-weight: 700;
 }
 
+.comment-title:hover {
+	color: var(--posted-by-hover);
+}
+
 .comments-content a {
 	display: inline-block;
-	color: inherit;
+	color: var(--font-color-comments);
 	text-decoration: none;
 	background: none;
 }
 
 .comments-content a:hover {
-	color: rgb(0, 0, 238);
+	color: var(--posted-by-hover);
 	text-decoration: underline;
 }
 
@@ -35,4 +39,17 @@
 .comment-text {
 	letter-spacing: 1px;
 	padding-left: 1.6rem;
+	color: var(--font-color-comments);
+}
+
+@media (max-width: 700px) {
+	.comments-content {
+		font-size: .8rem;
+	}
+}
+
+@media (max-width: 500px) {
+	.comments-content {
+		font-size: .7rem;
+	}
 }
