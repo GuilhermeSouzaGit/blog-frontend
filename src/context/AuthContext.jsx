@@ -29,9 +29,10 @@ const AuthProvider = ({ children }) => {
 		[]
 	);
 
-	const logout = () => {
+	const logout = useMemo(() => {
 		cookies.remove("token");
-	};
+		cookies.remove("userID");
+	}, []);
 
 	const context = useMemo(
 		() => ({
