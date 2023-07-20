@@ -5,7 +5,7 @@
 	align-items: center;
 }
 
-form {
+.form-container form {
 	display: flex;
 	flex-direction: column;
 	align-items: flex-end;
@@ -18,4 +18,26 @@ form {
 	font-weight: 600;
 	cursor: pointer;
 	max-width: 10rem;
+}
+
+@media (max-width: 700px) {
+	.btn-login {
+		font-size: .8rem;
+	}
+}
+
+@media (max-width: 500px) {
+	.btn-login {
+		font-size: .7rem;
+		padding: .5rem 1rem;
+		border-radius: .7rem;
+	}
+}
+
+@media (max-width: 360px) {
+	.btn-login {
+		padding: .4rem .5rem;
+		font-weight: 400;
+		border-radius: .5rem;
+	}
 }
