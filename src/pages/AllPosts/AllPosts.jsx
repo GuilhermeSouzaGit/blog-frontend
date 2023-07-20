@@ -8,6 +8,7 @@ import { SeeMore } from "../../components/SeeMore/SeeMore";
 import { Like } from "../../components/Like/Like";
 import { Comments } from "../../components/Comments/Comments";
 import { AddComment } from "../../components/AddComment/AddComment";
+import { AccessDenied } from "../../components/AccessDenied/AccessDenied";
 
 export const AllPosts = () => {
 	const { token } = useAuth();
@@ -22,8 +23,10 @@ export const AllPosts = () => {
 			},
 		})
 			.then((res) => res.json())
-			.then(({ posts }) => {
-				setPosts(posts);
+			.then(({ posts, message }) => {
+				message === "Acesso Negado!"
+					? setPosts(message)
+					: setPosts(posts);
 			})
 			.catch((e) => {
 				console.log(e);
@@ -61,10 +64,10 @@ export const AllPosts = () => {
 
 	return (
 		<div>
-			<Navbar btnText="Sair" />
-			<div className="post-container">
-				{posts ? (
-					posts.map((post) => {
+			<Navbar />
+			{posts !== "Acesso Negado!" ? (
+				<div className="post-container">
+					{posts.map((post) => {
 						return (
 							<div key={post._id} className="post-content">
 								<h1>{post.title}</h1>
@@ -116,11 +119,11 @@ export const AllPosts = () => {
 								</div>
 							</div>
 						);
-					})
-				) : (
-					<p>Não temos posts</p>
-				)}
-			</div>
+					})}
+				</div>
+			) : (
+				<AccessDenied />
+			)}
 		</div>
 	);
 };
