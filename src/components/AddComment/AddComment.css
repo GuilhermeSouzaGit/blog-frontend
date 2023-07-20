@@ -1,16 +1,16 @@
 .add-comment-input {
-	border: 2px solid rgba(0, 0, 0, .3);
+	border: 2px solid var(--border-comment-input);
 	padding: 0.4rem 1rem;
 	width: 20vw;
 	border-radius: 1rem;
-	resize: vertical;
 	outline: none;
 	letter-spacing: 1px;
+	color: var(--font-color);
 }
 
 .add-comment-input[contenteditable="true"]::after {
 	content: attr(data-placeholder);
-	color: #aaa;
+	color: var(--placeholder-comment-input);
 }
 
 .add-comment-input.has-content::after {
@@ -31,4 +31,40 @@
 .add-comment-container svg {
 	cursor: pointer;
 	background: none;
+}
+
+@media (max-width: 1920px) {
+	.add-comment-input {
+		width: 28vw;
+	}
+}
+
+@media (max-width: 1400px) {
+	.add-comment-input {
+		width: 35vw;
+	}
+}
+
+@media (max-width: 1000px) {
+	.add-comment-input {
+		width: 42vw;
+	}
+}
+
+@media (max-width: 700px) {
+	.add-comment-input {
+		width: 50vw;
+	}
+}
+
+@media (max-width: 500px) {
+	.add-comment-input {
+		width: 60vw;
+		padding: 0.3rem 1rem;
+		font-size: .7rem;
+	}
+
+	.add-comment-container svg {
+		width: 26px;
+	}
 }
