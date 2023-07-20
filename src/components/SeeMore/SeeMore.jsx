@@ -13,11 +13,12 @@ export const SeeMore = ({ postId, posts, setPosts }) => {
 		setPosts(updatedPosts);
 	};
 
-	const post = posts.find((post) => post._id === postId);
+	const post =
+		Array.isArray(posts) && posts.find((post) => post._id === postId);
 
 	return (
 		<button onClick={toggleSeeMore} className="see-more-btn">
-			{post.seeMore ? "Ver Menos" : "Ver Mais"}
+			{post && post.seeMore ? "Ver Menos" : "Ver Mais"}
 		</button>
 	);
 };
