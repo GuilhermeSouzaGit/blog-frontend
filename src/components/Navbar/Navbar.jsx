@@ -1,36 +1,82 @@
 import React, { useContext } from "react";
 import "./Navbar.css";
-import Logo from "../../assets/images/logo.svg";
 import { Link, useNavigate } from "react-router-dom";
-import { AuthContext } from "../../context/AuthContext";
+import { AuthContext, useAuth } from "../../context/AuthContext";
+import { DarkModeBtn } from "../DarkModeBtn/DarkModeBtn";
+import { GiSpiderWeb } from "react-icons/gi";
 
 // eslint-disable-next-line react/prop-types
 export const Navbar = ({ linkRoute, btnText }) => {
 	const { logout } = useContext(AuthContext);
+	const { token, usersId } = useAuth();
 	const navigate = useNavigate();
 
 	const handleLogout = () => {
 		logout;
 		navigate("/");
+		document.location.reload();
 	};
 
 	return (
-		<nav className="navbar-container">
-			<a href="#">
-				<img src={Logo} alt="" />
-			</a>
-			<ul className="navbar-content">
-				<li>
-					<Link to={linkRoute}>
-						<button
-							className="btn btn-navbar"
-							onClick={handleLogout}
-						>
-							{btnText}
-						</button>
-					</Link>
-				</li>
-			</ul>
-		</nav>
+		<>
+			{token ? (
+				<nav className="navbar-container">
+					<a href="/posts/">
+						<h1>
+							<GiSpiderWeb /> Blog
+						</h1>
+					</a>
+					<ul className="navbar-content">
+						<li>
+							<Link to={"/posts/"}>
+								<button className="btn btn-navbar">
+									Início
+								</button>
+							</Link>
+						</li>
+						<li>
+							<Link to={`/user/${usersId}`}>
+								<button className="btn btn-navbar">
+									Perfil
+								</button>
+							</Link>
+						</li>
+						<li>
+							<Link>
+								<button
+									className="btn btn-navbar"
+									onClick={handleLogout}
+								>
+									Sair
+								</button>
+							</Link>
+						</li>
+						<li>
+							<DarkModeBtn />
+						</li>
+					</ul>
+				</nav>
+			) : (
+				<nav className="navbar-container">
+					<a href="/">
+						<h1>
+							<GiSpiderWeb /> Blog
+						</h1>
+					</a>
+					<ul className="navbar-content">
+						<li>
+							<Link to={linkRoute}>
+								<button className="btn btn-navbar">
+									{btnText}
+								</button>
+							</Link>
+						</li>
+						<li>
+							<DarkModeBtn />
+						</li>
+					</ul>
+				</nav>
+			)}
+		</>
 	);
 };
