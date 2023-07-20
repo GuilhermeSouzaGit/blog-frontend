@@ -5,7 +5,6 @@ import "./Comments.css";
 import { Link } from "react-router-dom";
 
 export const Comments = ({ comment }) => {
-	console.log(comment.userId);
 	return (
 		<div className="comments-content">
 			<Link to={`/user/${comment.userId}`}>
