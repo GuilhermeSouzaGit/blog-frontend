@@ -58,7 +58,6 @@ export const Login = () => {
 						value={formData.password}
 						onChange={handleChange}
 					/>
-
 					<button type="submit" className="btn btn-login">
 						Entrar
 					</button>
