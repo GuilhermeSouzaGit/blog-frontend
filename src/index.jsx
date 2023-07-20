@@ -10,6 +10,8 @@ import { AllPosts } from "./pages/AllPosts/AllPosts";
 import { AuthProvider } from "./context/AuthContext";
 import { Profile } from "./pages/Profile/Profile";
 import { Post } from "./pages/Post/Post";
+import { Register } from "./pages/Register/Register";
+import { ThemeProvider } from "./context/ThemeContext";
 
 const router = createBrowserRouter([
 	{
@@ -32,13 +34,19 @@ const router = createBrowserRouter([
 		path: "/post/:id",
 		element: <Post />,
 	},
+	{
+		path: "/register",
+		element: <Register />,
+	},
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
 	<React.StrictMode>
 		<AuthProvider>
-			<RouterProvider router={router} />
+			<ThemeProvider>
+				<RouterProvider router={router} />
+			</ThemeProvider>
 		</AuthProvider>
 	</React.StrictMode>
 );
