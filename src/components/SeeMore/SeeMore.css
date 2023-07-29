@@ -1,6 +1,6 @@
 .see-more-btn {
 	color: var(--see-more-color);
-	margin-top: .5rem;
+	margin: .5rem 0 .5rem 0;
 	background: none;
 	border: none;
 	border-bottom: 1px solid var(--see-more-color);
