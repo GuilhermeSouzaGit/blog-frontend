@@ -12,6 +12,7 @@ import { Profile } from "./pages/Profile/Profile";
 import { Post } from "./pages/Post/Post";
 import { Register } from "./pages/Register/Register";
 import { ThemeProvider } from "./context/ThemeContext";
+import { NewPost } from "./pages/NewPost/NewPost";
 
 const router = createBrowserRouter([
 	{
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
 	{
 		path: "/register",
 		element: <Register />,
+	},
+	{
+		path: "/post/create",
+		element: <NewPost />,
 	},
 ]);
 
