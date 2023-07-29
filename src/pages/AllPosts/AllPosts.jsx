@@ -87,6 +87,15 @@ export const AllPosts = () => {
 								) : (
 									""
 								)}
+								{post.images.length > 0 ? (
+									<img
+										src={post.images}
+										alt="post image"
+										className="post-image"
+									/>
+								) : (
+									""
+								)}
 								<div className="like-comment-section">
 									<div className="likes">
 										<Like
