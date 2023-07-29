@@ -8,7 +8,8 @@ import { GiSpiderWeb } from "react-icons/gi";
 // eslint-disable-next-line react/prop-types
 export const Navbar = ({ linkRoute, btnText }) => {
 	const { logout } = useContext(AuthContext);
-	const { token, usersId } = useAuth();
+	const { token, usersId, admin } = useAuth();
+
 	const navigate = useNavigate();
 
 	const handleLogout = () => {
@@ -41,6 +42,17 @@ export const Navbar = ({ linkRoute, btnText }) => {
 								</button>
 							</Link>
 						</li>
+						{admin ? (
+							<li>
+								<Link to={"/post/create"}>
+									<button className="btn btn-navbar">
+										Criar Post
+									</button>
+								</Link>
+							</li>
+						) : (
+							""
+						)}
 						<li>
 							<Link>
 								<button
