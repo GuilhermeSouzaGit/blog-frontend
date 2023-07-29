@@ -7,7 +7,7 @@
 
 .post-content {
 	display: flex;
-	flex-wrap: wrap;
+	flex-direction: column;
 	width: 25vw;
 	margin-top: 4rem;
 	border: 1px solid var(--bg-elements);
@@ -18,6 +18,10 @@
 
 .post-content h1 {
 	margin-bottom: 2rem;
+	background: var(--bg-elements);
+}
+
+.post-content img {
 	background: var(--bg-elements);
 }
 
