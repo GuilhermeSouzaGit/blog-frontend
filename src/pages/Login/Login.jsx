@@ -28,8 +28,8 @@ export const Login = () => {
 			.then((res) => {
 				if (res.status === 200) return res.json();
 			})
-			.then(({ token, userId }) => {
-				login(token, userId);
+			.then(({ token, userId, admin }) => {
+				login(token, userId, admin);
 				navigate("/posts/");
 			})
 			.catch((err) => console.log(err));
