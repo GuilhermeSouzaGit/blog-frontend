@@ -18,13 +18,19 @@ const AuthProvider = ({ children }) => {
 		const usersId = cookies.get("userID");
 		return usersId ? usersId : "";
 	});
+	const [admin, setAdmin] = useState(() => {
+		const admin = cookies.get("isAdmin");
+		return admin ? admin : false;
+	});
 
 	const login = useMemo(
-		() => (token, userId) => {
+		() => (token, userId, admin) => {
 			cookies.set("token", token);
 			setToken(token);
 			cookies.set("userID", userId);
 			setUsersId(userId);
+			admin ? cookies.set("isAdmin", admin) : setAdmin(admin);
+			setAdmin(admin);
 		},
 		[]
 	);
@@ -40,6 +46,7 @@ const AuthProvider = ({ children }) => {
 			login,
 			logout,
 			usersId,
+			admin,
 		}),
 		[token, login, logout, usersId]
 	);
