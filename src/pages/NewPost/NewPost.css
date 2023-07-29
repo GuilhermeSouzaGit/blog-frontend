@@ -1,0 +1,57 @@
+.new-post-container {
+	margin-top: 4rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+}
+
+.new-post-content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.new-post-content input {
+	width: 35rem;
+}
+
+.new-post-field-input {
+	margin-top: 3rem;
+}
+
+.new-post-content h2 {
+	margin-top: 3rem;
+}
+
+.textarea-input {
+	margin-top: 1rem;
+	width: -webkit-fill-available;
+	resize: vertical;
+	color: var(--font-color);
+	height: 6rem;
+	border: 1px solid var(--border-comment-input);
+	border-radius: .5rem;
+	padding: .2rem;
+	outline: none;
+}
+
+input[type="file"] {
+	display: none;
+}
+
+.send-image-field div label {
+	margin-top: 1rem;
+	color: var(--btn-color);
+	background: var(--font-color);
+	border: 1px solid var(--font-color);
+	padding: 1rem;
+	width: fit-content;
+	cursor: pointer;
+}
+
+.send-image-field div label:hover {
+	transition: all .3s;
+	color: var(--font-color);
+	background: var(--background);
+}
