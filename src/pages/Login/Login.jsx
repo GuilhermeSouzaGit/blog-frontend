@@ -1,14 +1,16 @@
 /* eslint-disable no-unused-vars */
-import React, { useContext, useRef } from "react";
+import React, { useContext, useRef, useState } from "react";
 import { Input } from "../../components/Input/Input";
 import { Navbar } from "../../components/Navbar/Navbar";
 import "./Login.css";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
+import { WarningMessage } from "../../components/WarningMessage/WarningMessage";
 
 export const Login = () => {
 	const inputRef = useRef({});
 	const { login } = useContext(AuthContext);
+	const [message, setMessage] = useState("");
 
 	const navigate = useNavigate();
 
@@ -26,11 +28,17 @@ export const Login = () => {
 			}),
 		})
 			.then((res) => {
-				if (res.status === 200) return res.json();
+				const status = res.status;
+				return res.json().then((data) => ({ status, data }));
 			})
-			.then(({ token, userId, admin }) => {
-				login(token, userId, admin);
-				navigate("/posts/");
+			.then(({ status, data }) => {
+				const { token, userId, admin, message } = data;
+				if (status === 422) {
+					setMessage(message);
+				} else {
+					login(token, userId, admin);
+					navigate("/posts/");
+				}
 			})
 			.catch((err) => console.log(err));
 	};
@@ -38,6 +46,7 @@ export const Login = () => {
 	return (
 		<>
 			<Navbar linkRoute="/register" btnText="Registrar-se" />
+			{message ? <WarningMessage message={message} /> : ""}
 			<div className="form-container">
 				<form action="" onSubmit={handleSubmit}>
 					<Input
