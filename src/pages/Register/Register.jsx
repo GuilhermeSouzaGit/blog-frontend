@@ -90,7 +90,7 @@ export const Register = () => {
 					<button type="submit" className="btn btn-register">
 						Criar
 					</button>
-					<span>*insira um e-mail válido</span>
+					<span>*Por favor, insira um e-mail válido</span>
 				</form>
 			</div>
 		</>
