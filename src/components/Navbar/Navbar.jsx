@@ -13,9 +13,9 @@ export const Navbar = ({ linkRoute, btnText }) => {
 	const navigate = useNavigate();
 
 	const handleLogout = () => {
-		logout;
-		document.location.reload();
+		logout();
 		navigate("/");
+		document.location.reload();
 	};
 
 	return (
