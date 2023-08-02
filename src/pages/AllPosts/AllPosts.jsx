@@ -64,7 +64,7 @@ export const AllPosts = () => {
 
 	return (
 		<div>
-			<Navbar />
+			<Navbar linkRoute="/login" btnText="Entrar" />
 			{posts !== "Acesso Negado!" ? (
 				<div className="post-container">
 					{posts.map((post) => {
