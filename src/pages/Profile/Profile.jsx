@@ -5,7 +5,7 @@ import { Navbar } from "../../components/Navbar/Navbar";
 export const Profile = () => {
 	return (
 		<>
-			<Navbar />
+			<Navbar btnText="Entrar" linkRoute="/login/" />
 			<UserProfile />
 		</>
 	);
