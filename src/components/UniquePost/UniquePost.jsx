@@ -60,7 +60,7 @@ export const UniquePost = () => {
 
 	return (
 		<>
-			<Navbar btnText="Sair" />
+			<Navbar />
 			{uniquePost.message !== "Acesso Negado!" ? (
 				uniquePost ? (
 					<div className="post-container">
