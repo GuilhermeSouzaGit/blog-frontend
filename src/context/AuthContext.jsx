@@ -20,7 +20,7 @@ const AuthProvider = ({ children }) => {
 	});
 	const [admin, setAdmin] = useState(() => {
 		const admin = cookies.get("isAdmin");
-		return admin ? admin : false;
+		return admin ? true : false;
 	});
 
 	const login = useMemo(
@@ -38,6 +38,7 @@ const AuthProvider = ({ children }) => {
 	const logout = useMemo(() => {
 		cookies.remove("token");
 		cookies.remove("userID");
+		cookies.remove("isAdmin");
 	}, []);
 
 	const context = useMemo(
