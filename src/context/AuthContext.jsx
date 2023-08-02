@@ -1,6 +1,12 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
-import { createContext, useContext, useMemo, useState } from "react";
+import {
+	createContext,
+	useCallback,
+	useContext,
+	useMemo,
+	useState,
+} from "react";
 import Cookies from "universal-cookie";
 const cookies = new Cookies();
 const AuthContext = createContext();
@@ -35,7 +41,7 @@ const AuthProvider = ({ children }) => {
 		[]
 	);
 
-	const logout = useMemo(() => {
+	const logout = useCallback(() => {
 		cookies.remove("token");
 		cookies.remove("userID");
 		cookies.remove("isAdmin");
