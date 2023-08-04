@@ -12,10 +12,13 @@ export const Navbar = ({ linkRoute, btnText }) => {
 
 	const navigate = useNavigate();
 
-	const handleLogout = () => {
-		logout();
-		navigate("/");
-		document.location.reload();
+	const handleLogout = async () => {
+		try {
+			await logout();
+			navigate("/");
+		} catch (error) {
+			console.error("Erro ao fazer logout:", error);
+		}
 	};
 
 	return (
