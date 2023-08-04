@@ -41,11 +41,14 @@ const AuthProvider = ({ children }) => {
 		[]
 	);
 
-	const logout = useCallback(() => {
-		cookies.remove("token");
-		cookies.remove("userID");
-		cookies.remove("isAdmin");
-	}, []);
+	const logout = async () => {
+		await cookies.remove("token");
+		await cookies.remove("userID");
+		await cookies.remove("isAdmin");
+		setToken("");
+		setUsersId("");
+		setAdmin(false);
+	};
 
 	const context = useMemo(
 		() => ({
