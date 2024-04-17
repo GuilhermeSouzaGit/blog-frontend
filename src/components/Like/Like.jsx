@@ -11,16 +11,13 @@ export const Like = ({ postId, postLikes, updatePostLikes, post }) => {
 
 	const handleLike = (e) => {
 		e.preventDefault();
-		fetch(
-			`https://troubled-sheath-dress-bass.cyclic.app/posts/${postId}/like`,
-			{
-				method: "POST",
-				headers: {
-					"Content-type": "application/json",
-					Authorization: `Bearer ${token}`,
-				},
-			}
-		)
+		fetch(`https://wild-blue-tuna-wrap.cyclic.app/posts/${postId}/like`, {
+			method: "POST",
+			headers: {
+				"Content-type": "application/json",
+				Authorization: `Bearer ${token}`,
+			},
+		})
 			.then((res) => {
 				if (res.status === 200) return res.json();
 			})

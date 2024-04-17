@@ -15,7 +15,7 @@ export const AllPosts = () => {
 	const [posts, setPosts] = useState([]);
 
 	useEffect(() => {
-		fetch("https://troubled-sheath-dress-bass.cyclic.app/posts/", {
+		fetch("https://wild-blue-tuna-wrap.cyclic.app/posts/", {
 			method: "GET",
 			headers: {
 				"Content-type": "application/json",

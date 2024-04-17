@@ -12,7 +12,7 @@ export const UserProfile = () => {
 
 	useEffect(() => {
 		fetch(
-			`https://troubled-sheath-dress-bass.cyclic.app/users/profile/${params.id}`,
+			`https://wild-blue-tuna-wrap.cyclic.app/users/profile/${params.id}`,
 			{
 				method: "GET",
 				headers: {

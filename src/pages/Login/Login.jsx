@@ -17,7 +17,7 @@ export const Login = () => {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		const { email, password } = inputRef.current;
-		fetch("https://troubled-sheath-dress-bass.cyclic.app/users/login", {
+		fetch("https://wild-blue-tuna-wrap.cyclic.app/users/login", {
 			method: "POST",
 			headers: {
 				"Content-type": "application/json",

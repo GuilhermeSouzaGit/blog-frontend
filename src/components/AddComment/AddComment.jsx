@@ -16,7 +16,7 @@ export const AddComment = ({ postId, updatePostComments }) => {
 	const handleComment = (e) => {
 		e.preventDefault();
 		fetch(
-			`https://troubled-sheath-dress-bass.cyclic.app/posts/${postId}/comment`,
+			`https://wild-blue-tuna-wrap.cyclic.app/posts/${postId}/comment`,
 			{
 				method: "POST",
 				headers: {

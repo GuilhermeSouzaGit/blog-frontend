@@ -12,7 +12,7 @@ export const LikedPosts = ({ user }) => {
 
 	useEffect(() => {
 		fetch(
-			`https://troubled-sheath-dress-bass.cyclic.app/users/liked/${params.id}`,
+			`https://wild-blue-tuna-wrap.cyclic.app/users/liked/${params.id}`,
 			{
 				method: "GET",
 				headers: {

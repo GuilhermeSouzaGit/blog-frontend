@@ -16,7 +16,7 @@ export const Register = () => {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		const { name, email, password, confirmPassword } = inputRef.current;
-		fetch("https://troubled-sheath-dress-bass.cyclic.app/users/register", {
+		fetch("https://wild-blue-tuna-wrap.cyclic.app/users/register", {
 			method: "POST",
 			headers: {
 				"Content-type": "application/json",

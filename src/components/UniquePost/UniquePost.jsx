@@ -17,7 +17,7 @@ export const UniquePost = () => {
 
 	useEffect(() => {
 		fetch(
-			`https://troubled-sheath-dress-bass.cyclic.app/posts/post/${params.id}`,
+			`https://wild-blue-tuna-wrap.cyclic.app/posts/post/${params.id}`,
 			{
 				method: "GET",
 				headers: {

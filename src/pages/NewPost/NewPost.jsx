@@ -29,7 +29,7 @@ export const NewPost = () => {
 			formData.append("images", imageFiles[i]);
 		}
 
-		fetch("https://troubled-sheath-dress-bass.cyclic.app/posts/create", {
+		fetch("https://wild-blue-tuna-wrap.cyclic.app/posts/create", {
 			method: "POST",
 			headers: {
 				Authorization: `Bearer ${token}`,
